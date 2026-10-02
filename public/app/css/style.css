@@ -1,0 +1,17 @@
+:root {
+    --primary: #2563EB;
+    --primary-dark: #1D4ED8;
+    --dark: #0F172A;
+    --text: #1E293B;
+    --text-secondary: #64748B;
+    --white: #FFFFFF;
+    --background: #F1F5F9;
+    --success: #22C55E;
+    --error: #EF4444;
+}
+.btn-login{
+    color:var(--error);
+}
+.btn-login:hover{
+    color: var(--primary-dark);
+}
