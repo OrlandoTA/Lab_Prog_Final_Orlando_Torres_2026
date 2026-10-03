@@ -9,9 +9,93 @@
     --success: #22C55E;
     --error: #EF4444;
 }
-.btn-login{
-    color:var(--error);
+body{
+    font-family: 'Inter', sans-serif;
 }
-.btn-login:hover{
-    color: var(--primary-dark);
+.btn-login {
+    background-color: var(--primary);
+}
+
+.btn-login:hover {
+    background-color: var(--primary-dark);
+}
+
+.contenedor {
+    width: 100%;
+    display: flex;
+    min-height: 100vh;
+}
+
+.leftSide {
+    color: var(--white);
+    background-color: var(--dark);
+    width: 60%;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    background: linear-gradient(
+        135deg,
+        #0F172A 0%,
+        #172554 50%,
+        #1D4ED8 100%
+    );
+
+}
+
+.logo h1{
+    font-size: 5rem;
+    font-weight: 800;
+    margin: 0;
+}
+
+.slogan p{
+    font-size: 1.5rem;
+    margin-top: 10px;
+}
+
+.rightSide {
+    width: 40%;
+    background-color: var(--background);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+}
+
+.rightSide > .formulario{
+    width: 100%;
+    max-width: 450px;
+}
+
+.logo-right {
+    position: absolute;
+    top: 30px;
+    left: 30px;
+}
+
+.logo-right p {
+    margin: 0;
+    font-size: 1.5rem;
+    font-weight: 700;
+}
+
+
+/*Home page*/
+.navbar-fixium {
+    background-color: var(--dark);
+
+}
+.navbar-fixium .navbar-brand,
+.navbar-fixium .nav-link {
+    color: white;
+}
+
+.navbar-fixium .navbar-brand{
+    font-size: 1.5rem;
+    color: var(--white);
+    font-weight: 500;
 }
