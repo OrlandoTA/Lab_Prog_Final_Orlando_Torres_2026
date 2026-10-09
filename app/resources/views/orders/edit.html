@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <!--Css-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+    
+    <link rel="stylesheet" href="../../../../public/app/css/style.css">
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    
+    <!--JS-->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+    
+    <title>Crear orden - FIXIUM</title>
+</head>
+<body>
+     <nav class="navbar navbar-expand-lg navbar-fixium">
+        <div class="container-fluid">
+
+            <!-- Logo a la izquierda -->
+            <a class="navbar-brand" href="#">FIXIUM</a>
+
+            <!-- Botón responsive -->
+            <button class="navbar-toggler" type="button"
+                    data-bs-toggle="collapse"
+                    data-bs-target="#navbarNavDropdown"
+                    aria-controls="navbarNavDropdown"
+                    aria-expanded="false"
+                    aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <!-- Links a la derecha -->
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ms-auto">
+
+                    <li class="nav-item">
+                        <a class="nav-link" aria-current="page" href="http://localhost/Lab_Prog_Final_Orlando_Torres_2026/app/resources/views/home/index.html">
+                            <i class="bi bi-house"></i>
+                            Inicio
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link" href="http://localhost/Lab_Prog_Final_Orlando_Torres_2026/app/resources/views/orders">
+                            <i class="bi bi-clipboard-check"></i>
+                            Órdenes
+                        </a>
+                    </li>
+
+                    <li class="nav-item">
+                        
+                        <a class="nav-link" href="#"><i class="bi bi-laptop"></i>Equipos</a>
+                    </li>
+
+                    <li class="nav-item">
+                        
+                        <a class="nav-link" href="#"><i class="bi bi-people"></i>Clientes</a>
+                    </li>
+
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#"
+                            role="button"
+                            data-bs-toggle="dropdown"
+                            aria-expanded="false"> 
+                            <i class="bi bi-person"></i>
+                            Perfil
+                        </a>
+
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a class="dropdown-item" href="#">Cuenta</a>
+                            </li>
+                            <li>
+                                <a class="dropdown-item" href="#">Cerrar sesión</a>
+                            </li>
+                        </ul>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div class="container-fluid">
+        <div class="d-flex align-items-center justify-content-between">
+            <h2 class="titulo-vista mb-4">Editar orden de trabajo</h2> 
+            <button type="button" class="btn btn-primary" id="btnEditar">
+                <i class="bi bi-pencil-square"></i>
+                Editar
+            </button> 
+        </div>
+        <form action="" class="formCrear">
+            <div class="row g-3">
+
+                <div class="col-md-6">
+                    <label for="numeroOrden" class="form-label">N.º de orden</label>
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-hash"></i>
+                        </span>
+                        <input type="text" class="form-control" id="numeroOrden" value="000125" readonly>
+                    </div>
+                </div>
+                <div class="col-md-6">
+                    <label for="clienteSelect" class="form-label">Cliente</label>
+                    <div class="input-group">
+                        <select class="form-select" id="clienteSelect" readonly>
+                            <option selected>Seleccionar cliente</option>
+                            <option>Juan Pérez</option>
+                            <option>María González</option>
+                            <option>Carlos Rodríguez</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="fechaIngreso" class="form-label">Fecha de ingreso</label>
+                    <input type="date" class="form-control" id="fechaIngreso" readonly>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="estadoSelect" class="form-label">Estado</label>
+                    <select class="form-select campo-editable select-estado" id="estadoSelect" disabled>
+                        <option selected>Seleccionar estado</option>
+                        <option value="recibida" class="estado-recibida">Recibida</option>
+                        <option value="reparacion" class="estado-reparacion">En reparación</option>
+                        <option value="reparada" class="estado-reparada">Reparada</option>
+                        <option value="sin-reparacion" class="estado-sin-reparacion">Sin reparación</option>
+                    </select>
+                </div>
+
+
+            </div>
+
+            <div class="row g-3">
+
+                <div class="col-md-4">
+                    <label for="equipoSelect" class="form-label">Equipo</label>
+                    <div class="input-group">
+                        <select class="form-select campo-editable" id="equipoSelect" disabled>
+                            <option selected>Seleccionar equipo</option>
+                            <option>Notebook</option>
+                            <option>PC de escritorio</option>
+                            <option>Celular</option>
+                            <option>Tablet</option>
+                            <option>Monitor</option>
+                            <option>Impresora</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="col-md-4">
+                    <label for="marca" class="form-label">Marca</label>
+                    <input type="text" class="form-control campo-editable" id="marca" placeholder="Ej.: Lenovo" disabled>
+                </div>
+
+                <div class="col-md-4">
+                    <label for="modelo" class="form-label">Modelo</label>
+                    <input type="text" class="form-control campo-editable" id="modelo" placeholder="Ej.: IdeaPad 3" disabled>
+                </div>
+
+                <div class="col-12">
+                    <label for="numeroSerie" class="form-label">N.º de serie <span class="text-secondary">(Opcional)</span></label>
+                    <div class="input-group">
+                        <span class="input-group-text">
+                            <i class="bi bi-upc"></i>
+                        </span>
+                        <input type="text" class="form-control campo-editable" disabled id="numeroSerie" placeholder="Ej.: SN123456789">
+                    </div>
+                </div>
+            </div>
+
+
+            <div class="row g-3">
+
+                <div class="col-12">
+                    <label for="descripcionFalla" class="form-label">Descripción de la falla</label>
+                    <textarea class="form-control campo-editable" disabled id="descripcionFalla" rows="4" placeholder="Describa la falla o problema informado por el cliente..."></textarea>
+                    <div class="form-text">
+                        Incluya los detalles relevantes del problema.
+                    </div>
+                </div>
+
+                <div class="col-12">
+                    <label for="observaciones" class="form-label">
+                        Observaciones del técnico <span class="text-secondary">(Opcional)</span>
+                    </label>
+                    <textarea class="form-control campo-editable" disabled id="observaciones" rows="4" placeholder="Ingrese observaciones realizadas durante la revisión..."></textarea>
+                    <div class="form-text">
+                        Incluya observaciones relevantes del equipo.
+                    </div>
+                </div>
+
+            </div>
+
+            <div class="row g-3 mb-4">
+
+                <div class="col-md-6">
+                    <label for="importeFinal" class="form-label">
+                        Importe final <span class="text-secondary">(Opcional)</span>
+                    </label>
+
+                    <div class="input-group">
+                        <span class="input-group-text">$</span>
+                        <input type="number" class="form-control campo-editable" disabled id="importeFinal"
+                            placeholder="0.00" min="0" step="0.01">
+                    </div>
+                </div>
+
+                <div class="col-md-6">
+                    <label for="fechaEntrega" class="form-label">Fecha de entrega</label>
+                    <input type="date" class="form-control" id="fechaEntrega" readonly>
+                    <div class="form-text">
+                        Se asignará cuando la reparación sea finalizada.
+                </div>
+            </div>
+
+            <div class="d-flex justify-content-end gap-2 mt-4 mb-4">
+                <a href="http://localhost/Lab_Prog_Final_Orlando_Torres_2026/app/resources/views/orders/index.html" class="btn btn-outline-secondary btn-lg">
+                   <i class="bi bi-x-lg"></i>
+                    Cancelar
+                </a>
+                
+                <button type="submit" class="btn btn-success">
+                    <i class="bi bi-check-lg"></i>
+                    Guardar
+                </button>
+            </div>
+
+        </form>
+    </div>
+</body>
+</html>

@@ -118,12 +118,7 @@ body{
 .card{
     background-color: var(--white);
     color: var(--text);
-    transition: all 0.3s ease;
-}
 
-.card:hover{
-    transform: translateY(-5px) scale(1.02);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .card h2 {
@@ -136,6 +131,21 @@ body{
 
 .card i {
     font-size: 2rem;
+}
+
+.card-received,
+.card-reparing,
+.card-done,
+.card-notDone {
+    transition: all 0.3s ease;
+}
+
+.card-received:hover,
+.card-reparing:hover,
+.card-done:hover,
+.card-notDone:hover {
+    transform: translateY(-5px) scale(1.02);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.12);
 }
 
 .card-received{
@@ -187,6 +197,8 @@ body{
 .table-fixium{
     background-color: var(--white);
     border-radius: 12px;
+    border-collapse: separate;
+    border-spacing: 0;
     overflow: hidden;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
 }
@@ -194,6 +206,7 @@ body{
 .table-fixium thead{ 
     background-color: var(--dark);
     color: var(--white);
+    border-color: var(--dark);
 }
 
 .table-fixium thead th {
@@ -211,6 +224,7 @@ body{
 
 .table-fixium th,
 .table-fixium td{
+    border: 1px solid var(--text-secondary);
     padding: 15px;
 }
 
@@ -228,4 +242,76 @@ body{
     background-color: var(--primary-dark);
     color: var(--white);
     transform: translateY(-2px);
+}
+
+.filtro-ordenes {
+    background-color: var(--white);
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.06);
+}
+
+.filtro-ordenes input,
+.filtro-ordenes select{
+    border: 1px solid var(--text-secondary);
+}
+
+.filtro-ordenes .form-label {
+    font-weight: 500;
+    color: var(--text);
+}
+.filtro-ordenes .form-control,
+.filtro-ordenes .form-select,
+.filtro-ordenes span {
+    height: 38px;
+}
+.filtro-ordenes .btn {
+    height: 38px;
+    padding: 0 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    line-height: 1;
+    flex: 1;
+}
+
+.formCrear{
+    background-color: var(--white);
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 1);
+    padding: 20px;
+}
+
+.formCrear input,
+.formCrear select,
+.formCrear textarea,
+.formCrear .input-group-text{
+    border: 1px solid var(--primary);
+}
+/* Estado: Recibida */
+.select-estado.estado-recibida {
+    background-color: #DBEAFE;
+    color: var(--primary-dark);
+    border-color: var(--primary);
+}
+
+/* Estado: En reparación */
+.select-estado.estado-reparacion {
+    background-color: #FEF3C7;
+    color: #92400E;
+    border-color: var(--warning);
+}
+
+/* Estado: Reparada */
+.select-estado.estado-reparada {
+    background-color: #DCFCE7;
+    color: #166534;
+    border-color: var(--success);
+}
+
+/* Estado: Sin reparación */
+.select-estado.estado-sin-reparacion {
+    background-color: #FEE2E2;
+    color: #991B1B;
+    border-color: var(--error);
 }
