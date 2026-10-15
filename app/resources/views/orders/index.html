@@ -103,87 +103,57 @@
         </div>
 
         <!-- Filtros -->
-        <div class="card filtro-ordenes mt-4 mb-4">
-
+        <div class="card filtro-fixium mt-4 mb-4">
             <div class="card-body">
-
-                <div class="row g-3">
+                <div class="row g-3 align-items-end">
 
                     <!-- Buscar -->
-                    <div class="col-md-4">
-                            <label for="buscar" class="form-label">
-                                Buscar
-                            </label>
-
+                    <div class="col-lg-4 col-md-12">
+                        <label for="buscar" class="form-label">Buscar</label>
                         <div class="input-group">
-
-                            <span class="input-group-text">
-                                <i class="bi bi-search"></i>
-                            </span>
-
-                            <input type="text"
-                                class="form-control"
-                                id="buscar"
-                                placeholder="Cliente, equipo u orden">
+                            <span class="input-group-text"><i class="bi bi-search"></i></span>
+                            <input type="text" class="form-control" id="buscar"
+                                placeholder="Cliente, equipo o orden">
                         </div>
                     </div>
 
-                    <!-- Fecha desde -->
-                    <div class="col-md-2">
-                        <label for="fechaDesde" class="form-label">
-                            Desde
-                        </label>
-
-                        <input type="date"
-                            class="form-control"
-                            id="fechaDesde">
-                    </div>
-
-                    <!-- Fecha hasta -->
-                    <div class="col-md-2">
-                        <label for="fechaHasta" class="form-label">
-                            Hasta
-                        </label>
-
-                        <input type="date"
-                            class="form-control"
-                            id="fechaHasta">
-                    </div>
-
-                    <!-- Estado -->
-                    <div class="col-md-2">
-                        <label for="estado" class="form-label">
-                            Estado
-                        </label>
-
-                        <select class="form-select" id="estado">
-                            <option selected>Todos</option>
-                            <option>Recibida</option>
-                            <option>En reparación</option>
-                            <option>Reparada</option>
-                            <option>Sin reparación</option>
+                    <!-- Estados -->
+                    <div class="col-lg-2 col-md-6">
+                        <label for="ordenes" class="form-label">Estados</label>
+                        <select class="form-select" id="ordenes">
+                            <option selected value="">Todos</option>
+                            <option value="recibida">Recibida</option>
+                            <option value="en-reparacion">En reparación</option>
+                            <option value="reparada">Reparada</option>
+                            <option value="sin-reparacion">Sin reparación</option>
+                            <option value="entregada">Entregada</option>
                         </select>
+                    </div>
+                    
+                    <!-- Fecha de alta -->
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <label for="fechaDesde" class="form-label">Alta desde</label>
+                        <input type="date" class="form-control" id="fechaDesde">
+                    </div>
+
+                    <div class="col-lg-2 col-md-3 col-6">
+                        <label for="fechaHasta" class="form-label">Alta hasta</label>
+                        <input type="date" class="form-control" id="fechaHasta">
                     </div>
 
                     <!-- Botones -->
-                    <div class="col-md-2 d-flex align-items-end gap-2">
-
-                        <button type="button" class="btn btn-primary">
-                            <i class="bi bi-search"></i>
+                    <div class="col-lg-2 col-md-12 d-flex gap-2">
+                        <button type="button" class="btn btn-filtrar flex-grow-1">
+                            Filtrar
                         </button>
-
-                        <button type="button" class="btn btn-outline-secondary">
+                        <button type="button" class="btn btn-limpiar" title="Limpiar filtros" aria-label="Limpiar filtros">
                             <i class="bi bi-arrow-counterclockwise"></i>
                         </button>
-
                     </div>
 
                 </div>
-
-            </div>
-
         </div>
-
+    </div>
 
         <!--Tabla de ordenes-->
         <div class="mt-5">
@@ -205,9 +175,9 @@
                             <td>Otto</td>
                             <td>@mdo</td>
                             <td>
-                                <button type="button" class="btn btn-sm btn-primary" title="Editar orden">
+                                <a href="http://localhost/Lab_Prog_Final_Orlando_Torres_2026/app/resources/views/orders/edit.html" type="button" class="btn btn-sm btn-primary" title="Editar orden">
                                     <i class="bi bi-pencil-square"></i>
-                                </button>
+                                </a>
                                 <button type="button" class="btn btn-sm btn-primary" title="Ver orden">
                                 <i class="bi bi-eye"></i>
                                 </button>

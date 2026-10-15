@@ -3,20 +3,21 @@ function configurarColorEstado() {
 
     if (!estadoSelect) return;
 
-    const estados = [
-        'estado-recibida',
-        'estado-reparacion',
-        'estado-reparada',
-        'estado-sin-reparacion'
-    ];
-
     function actualizarColor() {
-        estadoSelect.classList.remove(...estados);
-        estadoSelect.classList.add(`estado-${estadoSelect.value}`);
+        // Quita cualquier clase estado-* previa
+        estadoSelect.classList.forEach(clase => {
+            if (clase.startsWith('estado-')) {
+                estadoSelect.classList.remove(clase);
+            }
+        });
+
+        // Si no hay estado elegido, no agrega nada
+        if (estadoSelect.value) {
+            estadoSelect.classList.add(`estado-${estadoSelect.value}`);
+        }
     }
 
     estadoSelect.addEventListener('change', actualizarColor);
-
     actualizarColor();
 }
 
