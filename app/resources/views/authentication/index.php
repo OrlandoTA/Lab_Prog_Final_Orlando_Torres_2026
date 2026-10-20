@@ -34,20 +34,22 @@
                 <h1>Bienvenido</h1>
                 <p class="text-end fs-3">De vuelta</p>
             </div>
-            <div class="formulario"> 
-                <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope"></i></span>
-                    <input type="text" class="form-control" placeholder="Correo Electronico" aria-label="Username" aria-describedby="basic-addon1">
+            <form action="<?= APP_URL ?>?controller=authentication&action=login" id="form-authentication" autocomplete="off" method="post">
+                <div class="formulario"> 
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"><i class="bi bi-envelope"></i></span>
+                        <input type="text" class="form-control" placeholder="Nombre de usuario" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="basic-addon1"> <i class="bi bi-lock"></i></span>
+                        <input type="text" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1">
+                    </div>
+                    <div class="d-grid">
+                        <button class="btn-login btn btn-primary" type="submit">Iniciar Sesion</button>
+                    </div>
                 </div>
-                 <div class="input-group mb-3">
-                    <span class="input-group-text" id="basic-addon1"> <i class="bi bi-lock"></i></span>
-                    <input type="text" class="form-control" placeholder="Contraseña" aria-label="Username" aria-describedby="basic-addon1">
-                </div>
-                <div class="d-grid">
-                    <button class="btn-login btn btn-primary" type="button">Iniciar Sesion</button>
-                </div>
-            </div>
-            
+            </form>
+           
         </div>
 
        
