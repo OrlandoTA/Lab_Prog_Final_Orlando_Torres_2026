@@ -25,24 +25,15 @@ final class AuthenticationService{
         }
 
         if(Password::needsRehash($usuario['clave'])){
-            $usuarioDao->updatePassword([
-                'clave' => Password::hash($pass),
-                'id' => $usuario['id']
-            ]);
+            $usuarioDao->updatePassword(Password::hash($pass), (int)$usuario['id']);
         }
 
-        if($usuario['estado'] != 1){
-            throw new \Exception('Su cuenta está inactiva.');
-        }
-
-        if($usuario['resetPass'] != 0){
-            throw new \Exception('Su clave ha caducado.');
-        }
+        session_regenerate_id(true);
 
         $_SESSION["token"] = APP_TOKEN;
         $_SESSION["usuarioId"] = (int)$usuario["id"];
         $_SESSION["usuario"] = $usuario["nombres"];
-        $_SESSION["perfil"] = $usuario["perfil"];
+        $_SESSION["perfil"] = "administrador"; //Es el unico tipo de perfil que va a haber
         $_SESSION["motivoCierreSesion"] = SESSION_FINISHED;
     }
 
@@ -56,19 +47,5 @@ final class AuthenticationService{
         session_destroy();
     }
 
-    public function resetPassword(UserDto $dto):void {
-        $this->validateForUpdatePass($dto);
-        $usuario = $this->dao->searchByEmail($dto->getCorreo());
-        
-        if(!$usuario){
-            throw new \Exception("El correo no existe");
-        }
-
-        if($dto->getClave() == ""){
-            throw new \Exception("Ingrese una contrase.");
-        }
-
-        $this->dao->reset($usuario['id']);
-        $this->dao->updatePassword($dto->toUpdatePass());
-    }
+   
 }

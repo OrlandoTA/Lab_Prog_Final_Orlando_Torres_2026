@@ -19,14 +19,14 @@
             <ul class="navbar-nav ms-auto">
 
                 <li class="nav-item">
-                    <a class="nav-link" aria-current="page" href="http://localhost/Lab_Prog_Final_Orlando_Torres_2026/app/resources/views/home/index.html">
+                    <a class="nav-link" aria-current="page" href="<?= APP_URL ?>home/index">
                         <i class="bi bi-house"></i>
                         Inicio
                     </a>
                 </li>
 
                 <li class="nav-item">
-                    <a class="nav-link" href="http://localhost/Lab_Prog_Final_Orlando_Torres_2026/app/resources/views/orders/index.html">
+                    <a class="nav-link" href="<?= APP_URL ?>orders/index">
                         <i class="bi bi-clipboard-check"></i>
                         Órdenes
                     </a>
@@ -34,12 +34,12 @@
 
                 <li class="nav-item">
                     
-                    <a class="nav-link" href="#"><i class="bi bi-laptop"></i>Equipos</a>
+                    <a class="nav-link" href="<?= APP_URL ?>equipment/index"><i class="bi bi-laptop"></i>Equipos</a>
                 </li>
 
                 <li class="nav-item">
                     
-                    <a class="nav-link" href="#"><i class="bi bi-people"></i>Clientes</a>
+                    <a class="nav-link" href="<?= APP_URL ?>customer/index"><i class="bi bi-people"></i>Clientes</a>
                 </li>
 
                 <li class="nav-item dropdown">

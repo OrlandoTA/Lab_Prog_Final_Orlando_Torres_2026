@@ -20,7 +20,7 @@ final class UserDao extends BaseDao implements InterfaceDao{
         $sql = "SELECT
                     user.id,
                     user.usuario,
-                    user.clave,
+                    user.clave
                     
                 FROM usuarios AS user
                 WHERE (user.usuario = :usuario)";
@@ -34,6 +34,14 @@ final class UserDao extends BaseDao implements InterfaceDao{
         }
 
         return $result[0];
+    }                                     
+    
+    public function updatePassword(string $hash, int $id):void{
+        $sql = "UPDATE usuarios SET clave = :clave WHERE id = :id";
+        $this->updateQuery($sql, [
+            "clave" => $hash,
+            "id" => $id
+        ]);
     }
 
 
